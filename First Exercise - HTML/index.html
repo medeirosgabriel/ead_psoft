@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Exercise HTML - EAD - PSOFT</title>
+</head>
+<style>
+
+    button {
+        color: blue;
+        height: 40px;
+        width: 40px;
+    }
+    
+    h1 {
+        color: blue;
+    }
+
+    h1, h2, input, button {
+        margin: 10px;
+    }
+
+    input {
+        width: 356px;
+        height: 50px;
+        font-size: 25px;
+    }
+
+</style>
+<body>
+    <h1>Calculadora</h1>
+    <input type="text" id="display"><br>
+    <button onclick="setOperation('add')">+</button>
+    <button onclick="setOperation('sub')">-</button>
+    <button onclick="setOperation('mul')">*</button>
+    <button onclick="setOperation('div')">/</button>
+    <button onclick="result()">=</button>
+    <button onclick="reset()">AC</button>
+</body>
+
+<script>
+
+    operation = null
+    aux = 0
+
+    function result() {
+        if (operation != null){
+            dis_val = parseInt(document.querySelector('#display').value)
+            if (operation == 'add') {
+                aux += dis_val
+            }else if (operation == 'sub') {
+                aux -= dis_val
+            }else if (operation == 'mul') {
+                aux *= dis_val
+            }else {
+                aux /= dis_val
+            }
+            document.querySelector('#display').value = aux
+        }
+    }
+
+    function clearDisplay() {
+        document.querySelector('#display').value = ''
+    }
+
+    function reset () {
+        this.clearDisplay()
+        aux = 0
+    }
+
+    function setOperation(op) {
+        operation = op
+        aux = parseInt(document.querySelector('#display').value)
+        this.clearDisplay()
+    }
+    
+</script>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess 5 Capitals</title>
+</head>
+
+<style>
+
+    html { 
+        background: url(img/states.png) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    
+    #answer_t, p, #state {
+        font-size: 30px;
+    }
+
+    input {
+        width: 356px;
+        height: 50px;
+        font-size: 30px;
+    }
+
+    button {
+        width: 80px;
+        height: 45px;
+    }
+
+</style>
+<body>
+    <h1>Guess 5 Capitals</h1>
+    <p>Score: <span id='score'>0</span></p>
+    <p>What is the capital of that state: <span id='state'></p>
+    <span id='answer_t'>Answer: </span><input type="text" id='answer'>
+    <button id='confirm' onclick="checkAnswer()">Confirm</button>
+    <p id='result'></p>
+</body>
+<script src="app.js">   
+</script>
+</html>
